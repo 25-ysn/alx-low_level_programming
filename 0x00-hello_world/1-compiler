@@ -1,9 +1,2 @@
 #!/bin/bash
-
-# Get the C file name from the $CFILE variable
-CFILE="main.c"
-CFILE_NAME=$(basename "$CFILE")
-CFILE_BASE="${CFILE_NAME%.*}"
-
-# Compile the C file
-gcc -c "$CFILE" -o "$CFILE_BASE.o"
+gcc -c $CFILE -o 'echo $CFILE | cut -d. -f1'.o
