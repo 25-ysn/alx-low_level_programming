@@ -1,24 +1,24 @@
 #include "lists.h"
 /**
- * node previous and next
+ * node prev and next
  * dlistint_t list
  *
+ * @h: head of the list
  * Return: the number of nodes
  */
-size_t print_dlistint(const dlistint_t *p)
+size_t print_dlistint(const dlistint_t *h)
 {
 	int count;
 	count = 0;
-	if (p == NULL)
+	if (h == NULL)
 		return (count);
-	while (p->prev != NULL)
-		p = p->prev;
-	while (p != NULL)
+	while (h->prev != NULL)
+		h = h->prev;
+	while (h != NULL)
 	{
-		printf("%d\n", p->n);
+		printf("%d\n", h->n);
 		count++;
-		p = p->next;
+		h = h->next;
 	}
-
 	return (count);
 }
